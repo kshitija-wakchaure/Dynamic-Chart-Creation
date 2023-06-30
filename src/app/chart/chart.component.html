@@ -1,0 +1,14 @@
+
+<div class="mid">
+    <input type="number" [(ngModel)]="value1" (blur)="updateValues(); validateValues()" placeholder="Enter value 1" />
+    <input type="number" [(ngModel)]="value2" (blur)="updateValues(); validateValues()" placeholder="Enter value 2" />
+    <button (click)="createChart()">Create Chart</button>
+</div>
+
+<div class="mid" *ngIf="chartData.length > 0">
+    <canvas id="myChart"></canvas>
+</div>
+
+<div *ngIf="errorMessage" class="mid error-message">
+    {{ errorMessage }}
+</div>
